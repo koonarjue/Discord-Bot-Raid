@@ -675,4 +675,4 @@ function formatSimple(arr) {
 
 
 
-client.login('MTQ3NzM2ODg5MDkyNDMzOTM2MQ.GIf4nH.QdUtpWOj9tSckbzsrk5OND4LrpmaRPj_jYySkE');
+client.login('TOKEN');

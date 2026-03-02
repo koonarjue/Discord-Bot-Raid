@@ -43,7 +43,7 @@ const commands = [
 
 ].map(command => command.toJSON());
 
-const rest = new REST({ version: '10' }).setToken('MTQ3NzM2ODg5MDkyNDMzOTM2MQ.GIf4nH.QdUtpWOj9tSckbzsrk5OND4LrpmaRPj_jYySkE');
+const rest = new REST({ version: '10' }).setToken("TOKEN");
 
 rest.put(
   Routes.applicationCommands('1477368890924339361'),
