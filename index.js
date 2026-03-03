@@ -18,7 +18,10 @@ app.listen(3000, () => {
 
 // ===== Discord Client =====
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds]
+   intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers
+  ]
 });
 
 client.once('ready', () => {
@@ -26,7 +29,6 @@ client.once('ready', () => {
 });
 
 client.login(process.env.TOKEN);
-
 
 let eventMessage = null;
 let closeTimestamp = null;
@@ -48,12 +50,6 @@ function getCloseTimestamp() {
 
 
 
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMembers
-  ]
-});
 
 const buttonsRow1 = new ActionRowBuilder().addComponents(
   new ButtonBuilder().setCustomId('Main').setLabel('Main').setStyle(ButtonStyle.Primary),
