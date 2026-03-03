@@ -1,6 +1,17 @@
 console.log("RUCARRIO เ ก ")
 require('dotenv').config();
+const express = require('express');
+const client = new Client({
 const { Client, GatewayIntentBits } = require('discord.js');
+
+const app = express();
+app.get('/', (req, res) => {
+  res.send('Bot is running!');
+});
+
+app.listen(3000, () => {
+  console.log('Web server running');
+});
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
@@ -10,16 +21,6 @@ client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
 
-const {
-  Client,
-  GatewayIntentBits,
-  EmbedBuilder,
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonStyle,
-  StringSelectMenuBuilder,
-
-} = require('discord.js');
 
 let eventMessage = null;
 let closeTimestamp = null;
