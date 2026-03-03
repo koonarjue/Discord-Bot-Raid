@@ -3,7 +3,16 @@ console.log("RUCARRIO เ ก");
 require('dotenv').config();
 
 const express = require('express');
-const { Client, GatewayIntentBits } = require('discord.js');
+const {
+  Client,
+  GatewayIntentBits,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  StringSelectMenuBuilder,
+  EmbedBuilder,
+  MessageFlags
+} = require('discord.js');
 
 // ===== Express (กัน Render sleep) =====
 const app = express();
