@@ -1,10 +1,13 @@
-console.log("RUCARRIO เ ก ")
+console.log("RUCARRIO เ ก");
+
 require('dotenv').config();
+
 const express = require('express');
-const client = new Client({
 const { Client, GatewayIntentBits } = require('discord.js');
 
+// ===== Express (กัน Render sleep) =====
 const app = express();
+
 app.get('/', (req, res) => {
   res.send('Bot is running!');
 });
@@ -13,6 +16,7 @@ app.listen(3000, () => {
   console.log('Web server running');
 });
 
+// ===== Discord Client =====
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
 });
@@ -20,6 +24,8 @@ const client = new Client({
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
+
+client.login(process.env.TOKEN);
 
 
 let eventMessage = null;
@@ -678,13 +684,3 @@ function formatSimple(arr) {
 
   return arr.map(id => `<@${id}>`).join('\n');
 }
-
-
-
-
-
-
-
-
-
-client.login(process.env.TOKEN);
